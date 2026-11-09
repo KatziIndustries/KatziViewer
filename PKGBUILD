@@ -1,6 +1,5 @@
 pkgname=KatziViewer-git
-pkgver=1
-pkgrel=1
+pkgver=2
 pkgdesc="A simple application for viewing images"
 arch=('x86_64')
 url="https://github.com/KatziIndustries/KatziViewer"
