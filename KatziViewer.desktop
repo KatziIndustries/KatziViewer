@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KatziViewer
+StartupWMClass=KatziViewer
+Comment=Katzi approves of this image viewer
+GenericName=Image Viewer
+Exec=KatziViewer %f
+Icon=KatziViewer
+Type=Application
+Categories=Utility;
+MimeType=image/png;image/jpeg;image/gif;image/webp;image/bmp;image/tiff;image/svg+xml;image/x-icon;image/avif;image/heic;
