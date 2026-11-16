@@ -6,6 +6,7 @@ using System.Numerics;
 using KatziDrip;
 
 string? filePath = null;
+
 if (args.Length > 0)
     filePath = args[0];
 
@@ -66,8 +67,15 @@ while (running)
 
     if (Input.ScrollWheelDelta != 0)
     {
-        preferredZoom += Input.ScrollWheelDelta / (7 / zoom);
-        preferredZoom = Math.Max(preferredZoom, 0.01f);
+        Vector2 mouseFromCenter = Input.MousePosition - window.Size / 2;
+
+        float oldZoom = preferredZoom;
+
+        preferredZoom *= MathF.Pow(1.2f, Input.ScrollWheelDelta);
+        preferredZoom = Math.Max(preferredZoom, 0.001f);
+
+        float ratio = preferredZoom / oldZoom;
+        preferredPosition = preferredPosition * ratio + mouseFromCenter * (ratio - 1);
     }
 
     if (Input.IsMiddleMousePressed())
